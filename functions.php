@@ -44,7 +44,7 @@ if ( ! function_exists( 'anthonyfajardo_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'anthonyfajardo' ),
+			'primary' => esc_html__( 'primary', 'anthonyfajardo' ),
 		) );
 
 		/*
@@ -119,18 +119,22 @@ add_action( 'widgets_init', 'anthonyfajardo_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function anthonyfajardo_scripts() {
+
+function anthonyfajardo_styles() {
 	wp_enqueue_style( 'anthonyfajardo-style', get_stylesheet_uri() );
+}
+add_action( 'wp_enqueue_scripts', 'anthonyfajardo_styles');
 
-	wp_enqueue_script( 'anthonyfajardo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+function anthonyfajardo_scripts() {
 
-	wp_enqueue_script( 'anthonyfajardo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'minified javascript', get_template_directory_uri(). '/scripts.min.js', array('jquery'), '20151215', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'anthonyfajardo_scripts' );
+
 
 /**
  * Implement the Custom Header feature.
@@ -159,3 +163,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+
+/***************************
+*
+*	CUSTOM FUNCTIONS 
+*
+***************************/
+
+/* dump() - makes for easy debugging. <?php dump($post); ?> */
+function dump($obj) {
+	echo "<pre>";
+	print_r($obj);
+	echo "</pre>";
+}
+
+/*
+Show featured image as background image
+*/
+
+function featured_image_url($currentPost){
+	$image_id = get_post_thumbnail_id($currentPost->ID);
+	$image_url= wp_get_attachment_url($image_id);
+	return $image_url;
+}
