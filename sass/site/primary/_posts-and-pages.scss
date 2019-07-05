@@ -21,3 +21,204 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+
+
+/*******************************
+*	BANNER SECTION
+*******************************/
+
+header#hero{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(255, 255,255, 0.3);
+		z-index: -1;
+	}	
+	
+
+	h4, h1{ 
+		margin: 0;
+		color: black;
+	}
+	h4.title{ text-align: right; }
+}
+
+@media screen and (min-width: 768px){
+	header#hero{
+		h1{	font-size: 4em; }
+		h4{ 
+			font-size: 1.5em; 
+			font-weight: 300;
+		}
+
+		h1, h4{ line-height: 1.25em; }
+	}
+}
+
+@media screen and (min-width: 1024px){
+	header#hero{
+
+		&:before{
+			 background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.77) 50%, rgba(255,255,255,1) 78%);
+		}
+		
+		.header-wrapper{
+			width: 100%;
+			max-width: 1024px;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+			justify-content: flex-end;
+
+			.header-text{
+				margin-right: 2em;
+				max-width: 500px;
+				width: initial;
+			}
+		}
+
+
+	}
+}
+
+
+.section{
+	padding: 25px;
+}
+
+/*******************************
+*	CONTENT SECTION
+*******************************/
+
+section.content{ 
+	p{ font-size: 18px; }
+}
+
+/*******************************
+*	WORK WITH ME SECTION
+*******************************/
+
+section.work-with-me{
+	text-align: center;
+	h2{ margin-top: 0; }
+
+	.work-with-me-container{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		.work-with-me-wrapper{
+			padding: 15px;
+			width: 100%;
+
+			.wwm-image{
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				margin-bottom: 2em;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+		}
+	}
+
+	@media screen and (min-width: 768px){
+		max-width: 1024px;
+		margin-left: auto;
+		margin-right: auto;
+		.work-with-me-container{
+			justify-content: space-around;
+			.work-with-me-wrapper{
+				width: 32%;
+
+				.wwm-image{
+					width: 175px;
+					height: 175px;
+				}
+
+				.wwm-text{ font-size: 14px; }
+			}
+		}
+	}
+}
+
+/*******************************
+*	PORTFOLIO SECTION
+*******************************/
+
+
+section.portfolio{
+	text-align: center;
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+
+	h2{ margin-bottom: 2em; }
+
+	.portfolio-item{
+		width: 100%;
+		text-align: left;
+		
+		.portfolio-info{
+			h3{
+				margin-top: 0;
+				a{
+					color: $color__link;
+					text-decoration: none;
+					transition: 0.3s ease-in-out;
+
+					&:hover{ 
+						color: $color__link-hover; 
+						text-decoration: underline;
+					}
+				}
+			}
+
+			p{ 
+				
+				margin-bottom: 0.5em; 
+				margin-top: 0;
+			}
+		}
+
+		.portfolio-image{
+			transition: 0.3s ease-in-out;
+			transform-origin: 0 0;
+			
+			&:hover{
+				transform: translateY(-10px);
+				box-shadow: 0px 15px 10px -15px #111;
+			}
+		}
+	}
+
+	@media screen and (min-width: 992px){
+		.portfolio-item{
+
+			@supports(display: grid){
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: auto;
+				grid-gap: 1em;
+				margin-bottom: 2em;
+	
+				.portfolio-image{ grid-column: 1/2;}
+				.portfolio-info{ grid-column: 2/4; }
+			}			
+		}
+	}
+}

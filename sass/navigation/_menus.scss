@@ -216,6 +216,11 @@ header#masthead{
 	}
 
 	@media screen and (min-width: 768px){
+		position: fixed;
+		z-index: 100;
+		width: 100%;
+		transition: 0.3s ease-in-out;
+		
 		.header-container{
 			max-width: 1440px;
 			margin: 0 auto;
@@ -266,3 +271,18 @@ header#masthead{
 	position: fixed!important;
 }
 
+.site-header.scrolled{
+	background: rgba(0,0,0,0.8)!important;
+	
+	.header-container{
+		nav#site-navigation{
+			.menu-primary-container{
+				ul#primary{
+					li{
+						a{ color: white!important; }
+					}
+				}
+			}
+		}
+	}
+}

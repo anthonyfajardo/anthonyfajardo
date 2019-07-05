@@ -122,6 +122,8 @@ add_action( 'widgets_init', 'anthonyfajardo_widgets_init' );
 
 function anthonyfajardo_styles() {
 	wp_enqueue_style( 'anthonyfajardo-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'anthonyfajardo-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,700&display=swap');
 }
 add_action( 'wp_enqueue_scripts', 'anthonyfajardo_styles');
 

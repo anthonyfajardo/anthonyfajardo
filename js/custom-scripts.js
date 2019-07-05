@@ -7,4 +7,11 @@ console.log('custom-scripts.js loaded');
 			$("#primary").toggleClass('toggled');
 		});
 	});
+
+	$(document).scroll(function(){
+		var $nav = $(".site-header");
+		$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+	});	
+
+
 } )(jQuery);
