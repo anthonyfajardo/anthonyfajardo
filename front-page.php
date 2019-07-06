@@ -59,6 +59,14 @@ get_header();
 						<?php get_template_part('template-parts/portfolio'); ?>
 					</section>
 
+					<section id="contact" class="section">
+						<h2>GETTING IN TOUCH WITH ME</h2>
+						<div class="contact-wrapper">
+							<a href="#">COLLABORATE</a>
+							<a href="<?php echo get_template_directory_uri() . '/hire-me'; ?>">I NEED A WEBSITE</a>
+						</div>
+					</section>
+
 				<?php endwhile; ?>
 			<?php endif; ?>
 

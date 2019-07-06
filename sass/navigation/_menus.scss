@@ -234,7 +234,8 @@ header#masthead{
 			.site-branding{
 				display: inline-block;
 				h1{ 
-					font-size: 24px; 
+					font-size: 24px;
+					font-weight:  400;
 				}
 			}
 
@@ -275,6 +276,13 @@ header#masthead{
 	background: rgba(0,0,0,0.8)!important;
 	
 	.header-container{
+		.site-branding{
+			h1.site-title{
+				a{ 
+					color: white!important; 
+				}
+			}
+		}		
 		nav#site-navigation{
 			.menu-primary-container{
 				ul#primary{
