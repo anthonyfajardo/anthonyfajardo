@@ -177,13 +177,15 @@ section.portfolio{
 			h3{
 				margin-top: 0;
 				a{
-					color: $color__link;
+					color: $color__text-main;
 					text-decoration: none;
-					transition: 0.3s ease-in-out;
+					border-bottom: 1px solid white;
+					transition: all 0.3s ease-in-out;
+					
 
 					&:hover{ 
-						color: $color__link-hover; 
-						text-decoration: underline;
+						color: $color__link; 
+						border-bottom: 1px solid $color__link;
 					}
 				}
 			}
