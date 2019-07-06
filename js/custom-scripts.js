@@ -6,6 +6,11 @@ console.log('custom-scripts.js loaded');
 			$(this).toggleClass('open');
 			$("#primary").toggleClass('toggled');
 		});
+
+		// $('li.menu-item a').click(function(){
+		// 	$("#menu-toggle").toggleClass('open');
+		// 	$("#primary").toggleClass('toggled');
+		// });
 	});
 
 	$(document).scroll(function(){

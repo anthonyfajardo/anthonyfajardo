@@ -16,25 +16,16 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="subpages" class="site-main collaborate">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+				<?php the_content(); ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+				<?php echo do_shortcode('[contact-form-7 id="60" title="collaborate"]'); ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
+			<?php endwhile; ?>	
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();
