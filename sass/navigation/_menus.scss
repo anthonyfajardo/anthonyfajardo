@@ -24,7 +24,7 @@ header#masthead{
 				transform: rotate(0deg);
 				transition: 0.5s ease-in-out;
 				z-index: 100;
-				// cursor: pointer;
+				cursor: pointer;
 
 				span{
 					display: block;
@@ -105,6 +105,7 @@ header#masthead{
 	}
 
 	.with-image{
+		background: rgba(0,0,0,0.5);
 		a{ color: white!important; }
 		li{
 			position: relative;
