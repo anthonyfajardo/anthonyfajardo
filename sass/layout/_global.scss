@@ -1,5 +1,5 @@
 footer{
-	border-top: 2px solid $color__text-main;	
+	border-top: 1px solid $color__text-main;	
 	margin-top: 3em;
 	.site-info{
 		max-width: 1024px;
@@ -9,3 +9,8 @@ footer{
 	}
 }
 
+
+.container{
+	max-width: 768px;
+	margin: 0 auto;
+}

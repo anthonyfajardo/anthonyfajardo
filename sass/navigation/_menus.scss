@@ -295,3 +295,44 @@ header#masthead{
 		}
 	}
 }
+
+
+
+/*
+Pagination for Blog Post
+*/
+
+.pagination{
+	margin-top: 3em;
+	width: 100%;
+	ul{
+		margin: 0;
+		padding: 0;		
+		display: flex;
+		flex-wrap:  wrap;
+		justify-content: center;
+		li{
+			list-style: none;
+			margin-bottom: 1em;
+			a{
+				background: lightblue;
+				color: white;
+				padding: 5px 10px;
+				margin: 2px;
+				font-size: 12px;
+				text-decoration: none;
+			}
+		}
+
+		li.active{
+			a{				
+				background: $color__text-main;
+			}
+		}
+
+		li.previous,
+		li.next{
+			// width: 100%;
+		}
+	}	
+}

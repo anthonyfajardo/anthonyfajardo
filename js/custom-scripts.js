@@ -32,10 +32,15 @@ console.log('custom-scripts.js loaded');
 	});
 
 
+	// navigation styling
+
 	var navHeight = $(".site-header").height();
 	console.log(navHeight);
 
 	$("#subpages").css("margin-top", navHeight + 25);
 
+
+
 } )(jQuery);
+
 
