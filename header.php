@@ -24,10 +24,16 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'anthonyfajardo' ); ?></a>
 		<header id="masthead" class="site-header">
-			<div class="header-container">
+			
+			<?php if(is_home()): ?>
+				<div class="header-container with-image">
+			<?php else: ?>
+				<div class="header-container">
+			<?php endif; ?>
+			
 				<div class="site-branding">
 					<?php if(!is_front_page()): ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>				
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>	
 					<?php endif; ?>
 				</div><!-- .site-branding -->
 

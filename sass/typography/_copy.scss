@@ -7,7 +7,31 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	font-weight: bolder;
+	font-size: 125%;
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+
+	&:before{
+		content: "\"";
+		position: absolute;
+		top: -35px;
+		left: -50px;
+		bottom: 0;
+		right: 0;
+		font-size: 75px;
+		font-family: 'Times New Roman', serif;
+	}
+
+	&:after{
+		content: "\"";
+		position: absolute;
+		bottom: -55px;
+		right: -30px;
+		font-size: 75px;
+		font-family: 'Times New Roman', serif;
+	}
 }
 
 address {

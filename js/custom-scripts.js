@@ -38,6 +38,7 @@ console.log('custom-scripts.js loaded');
 	console.log(navHeight);
 
 	$("#subpages").css("margin-top", navHeight + 25);
+	$(".single-post-wrapper").css("margin-top", navHeight);
 
 
 
