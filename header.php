@@ -26,7 +26,7 @@
 		<header id="masthead" class="site-header">
 			
 			<?php if(is_home()): ?>
-				<div class="header-container with-image">
+				<div class="header-container blog-nav">
 			<?php else: ?>
 				<div class="header-container">
 			<?php endif; ?>

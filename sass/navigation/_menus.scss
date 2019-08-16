@@ -104,27 +104,7 @@ header#masthead{
 		}		
 	}
 
-	.with-image{
-		background: rgba(0,0,0,0.5);
-		a{ color: white!important; }
-		li{
-			position: relative;
-			transition: 0.3s ease-in-out;
-			&:hover{
-				&:after{
-					content: "";
-					position: absolute;
-					top: 0;
-					bottom: -10px;
-					left: 0;
-					right: 0;
-					border-bottom: 4px solid white;
-					z-index: -1;
-					animation: line 0.3s 1 ease-in-out;
-				}
-			}
-		}			
-	}
+
 
 	@media screen and (min-width: 768px){
 		position: fixed;
@@ -133,7 +113,6 @@ header#masthead{
 		transition: 0.3s ease-in-out;
 		
 		.header-container{
-			max-width: 1440px;
 			margin: 0 auto;
 			padding: 15px 25px;
 			display: flex;
@@ -179,26 +158,21 @@ header#masthead{
 									bottom: -10px;
 									left: 0;
 									right: 0;
-									border-bottom: 4px solid white;
+									border-bottom: 4px solid $color__text-main;
 									z-index: -1;
 									animation: line 0.3s 1 ease-in-out;
 								}
 							}
 						}
 					}
-
-
 				}
-			}			
-		}
+			}
+		}	
 	}	
 
 }
 
-@keyframes line{
-	0%{ width: 0%; }
-	100%{ width: 100%; }
-}
+
 
 .toggled{
 	transform: translateX(0px)!important;
@@ -208,12 +182,13 @@ header#masthead{
 
 .site-header.scrolled{
 	background: rgba(0,0,0,0.8)!important;
-	
+
 	.header-container{
 		.site-branding{
 			h1.site-title{
 				a{ 
 					color: white!important; 
+
 				}
 			}
 		}		
@@ -221,7 +196,23 @@ header#masthead{
 			.menu-primary-container{
 				ul#primary{
 					li{
+						position: relative;
+						transition: 0.3s ease-in-out;
 						a{ color: white!important; }
+
+						&:hover{
+							&:after{
+								content: "";
+								position: absolute;
+								top: 0;
+								bottom: -10px;
+								left: 0;
+								right: 0;
+								border-bottom: 4px solid white!important;
+								z-index: -1;
+								animation: line 0.3s 1 ease-in-out;								
+							}
+						}
 					}
 				}
 			}
@@ -229,6 +220,29 @@ header#masthead{
 	}
 }
 
+.white{
+	li{
+		&:hover{
+			&:after{
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: -10px;
+				left: 0;
+				right: 0;
+				border-bottom: 4px solid white!important;
+				z-index: -1;
+				animation: line 0.3s 1 ease-in-out;								
+			}
+		}
+	}
+}
+
+
+@keyframes line{
+	0%{ width: 0%; }
+	100%{ width: 100%; }
+}
 
 
 /*

@@ -13,6 +13,10 @@ console.log('custom-scripts.js loaded');
 		// });
 	});
 
+
+
+	// navigation background changes when scrolled
+
 	$(document).scroll(function(){
 		var $nav = $(".site-header");
 		$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
@@ -32,7 +36,7 @@ console.log('custom-scripts.js loaded');
 	});
 
 
-	// navigation styling
+	// add margin top to the first element to offset the navigation height
 
 	var navHeight = $(".site-header").height();
 	console.log(navHeight);
@@ -40,6 +44,13 @@ console.log('custom-scripts.js loaded');
 	$("#subpages").css("margin-top", navHeight + 25);
 	$(".single-post-wrapper").css("margin-top", navHeight);
 
+
+
+	if($(".blog-title").css('background-image') != 'none'){
+		$('.blog-nav a').css('color', 'white');
+		$('.blog-nav').toggleClass("white");
+		console.log("there's a background!");
+	}
 
 
 } )(jQuery);

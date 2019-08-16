@@ -40,12 +40,12 @@ get_header();
 										<?php if(has_post_thumbnail()): ?>
 											<div class="blog-image-preview" style="background: url(<?php echo featured_image_url($post); ?>); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 										<?php else: ?>	
-											<div class="blog-image-preview no-image"></div>
+											<div class="blog-image-preview no-preview-image"></div>
 										<?php endif; ?>
 											
 									
 										<div class="blog-post-meta">
-											<h3><?php the_title(); ?></h3>
+											<h4><?php the_title(); ?></h4>
 											<h5><?php echo get_the_date('F j, Y'); ?>	</h5>
 										</div> <!-- /.blog-post-meta -->
 									</div> <!-- /.blog-post-wrapper -->
